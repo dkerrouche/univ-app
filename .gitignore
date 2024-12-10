@@ -1,0 +1,5 @@
+*__pycache__/
+# *.venv/
+*.chainlit/
+rag_chatbot_venv
+univ_app_venv
