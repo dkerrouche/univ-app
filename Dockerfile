@@ -37,7 +37,7 @@ COPY --chown=user . /app
 
 # Expose the port (for local debugging and deployment)
 # EXPOSE 7860
-
+RUN python ingest.py
 # # Dynamic port assignment for Hugging Face
 # CMD ["chainlit", "run", "app.py", "--host", "0.0.0.0", "--port", "${PORT}"]
 CMD ["chainlit", "run", "app.py", "--host", "0.0.0.0", "--port", "7865"]
