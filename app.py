@@ -16,7 +16,7 @@ import chainlit as cl
 # load_dotenv()
 # api_key = os.getenv("OPENAI_API_KEY")
 # api_key = "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"
-api_key = "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"
+api_key = "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"
 
 
 # import os

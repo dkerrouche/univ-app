@@ -11,7 +11,7 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 # # Load environment variables from the .env file
 # load_dotenv()
-api_key = "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"
+api_key = "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"
 
 DATA_PATH = 'data/'
 DB_FAISS_PATH = 'vectorstore/db_faiss'
