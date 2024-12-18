@@ -10,11 +10,11 @@ import chainlit as cl
 import os
 
 # import os
-# database_url = os.environ.get('DATABASE_URL')
+database_url = os.environ.get('DATABASE_URL')
 
 # # Load environment variables from the .env file
 # load_dotenv()
-# api_key = os.environ.get("api_key")
+api_key = os.getenv("api_key")
 # api_key = "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"
 # api_key = 
 
@@ -53,17 +53,13 @@ def retrieval_qa_chain(llm, prompt, db):
 
 #Loading the model
 def load_llm():
-    llm = ChatOpenAI(model="gpt-4o",
-                    #  api_key=api_key,
-                     streaming=True)
+    llm = ChatOpenAI(model="gpt-4o", api_key=api_key, streaming=True)
     return llm
 
 #QA Model Function
 def qa_bot():
     # embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2", model_kwargs={'device': 'cpu'})
-    embeddings = OpenAIEmbeddings(
-        # openai_api_key=api_key,
-                                  model="text-embedding-ada-002")
+    embeddings = OpenAIEmbeddings(openai_api_key=api_key, model="text-embedding-ada-002")
     db = FAISS.load_local(DB_FAISS_PATH, embeddings, allow_dangerous_deserialization=True)
     llm = load_llm()
     qa_prompt = set_custom_prompt()
