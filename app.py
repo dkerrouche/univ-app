@@ -7,16 +7,16 @@ from langchain_community.llms import CTransformers
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 import chainlit as cl
+import os
+
 # import os
-
-# from dotenv import load_dotenv
-
+# database_url = os.environ.get('DATABASE_URL')
 
 # # Load environment variables from the .env file
 # load_dotenv()
-# api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.environ.get("api_key")
 # api_key = "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"
-api_key = "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"
+# api_key = 
 
 
 # import os
