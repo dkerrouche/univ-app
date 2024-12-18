@@ -11,7 +11,7 @@ import os
 
 # # Load environment variables from the .env file
 # load_dotenv()
-api_key = os.environ.get("api_key")
+# api_key = os.environ.get("api_key")
 
 DATA_PATH = 'data/'
 DB_FAISS_PATH = 'vectorstore/db_faiss'
@@ -25,7 +25,9 @@ def create_vector_db():
     texts = text_splitter.split_documents(documents)
 
     # embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2', model_kwargs={'device': 'cpu'})
-    embeddings = OpenAIEmbeddings(openai_api_key=api_key, model="text-embedding-ada-002")
+    embeddings = OpenAIEmbeddings(
+        # openai_api_key=api_key,
+        model="text-embedding-ada-002")
 
     db = FAISS.from_documents(texts, embeddings)
     db.save_local(DB_FAISS_PATH)
