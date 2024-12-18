@@ -7,11 +7,18 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 # from dotenv import load_dotenv
 
+from dotenv import load_dotenv
+
 import os
 
 # # Load environment variables from the .env file
 # load_dotenv()
-api_key = os.getenv("api_key")
+load_dotenv(override=True)
+api_key = os.getenv("OPENAI_API_KEY")
+
+
+# import os
+# print("App running on port:", os
 
 DATA_PATH = 'data/'
 DB_FAISS_PATH = 'vectorstore/db_faiss'
